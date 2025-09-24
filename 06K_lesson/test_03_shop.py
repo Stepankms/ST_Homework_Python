@@ -4,15 +4,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-options = webdriver.FirefoxOptions()
-driver = webdriver.Firefox(options=options)
-
 def test_shop():
+    options = webdriver.FirefoxOptions()
+    driver = webdriver.Firefox(options=options)
+    
     driver.maximize_window
     driver.get("https://www.saucedemo.com/")
 
     user_name = driver.find_element(By.CSS_SELECTOR, "#user-name")
-    user_name.send_keys("standart_user")
+    user_name.send_keys("standard_user")
     password = driver.find_element(By.CSS_SELECTOR, "#password")
     password.send_keys("secret_sauce")
 
@@ -34,8 +34,8 @@ def test_shop():
     onesie.click()
 
     basket = WebDriverWait(driver, 10).until(
-         EC.element_to_be_clickable((By.CSS_SELECTOR, "#shopping-cart-container > a > span")))
-    basket = driver.find_element(By.CSS_SELECTOR, "#shopping-cart-container > a > span")
+         EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-test="shopping-cart-link"]')))
+    basket = driver.find_element(By.CSS_SELECTOR, '[data-test="shopping-cart-link"]')
     basket.click()
 
     checkout = driver.find_element(By.CSS_SELECTOR, "#checkout")
@@ -58,5 +58,5 @@ def test_shop():
     print(total_price)
 
     assert total_price_value == 58.29
-
-driver.quit
+    
+    driver.quit()
