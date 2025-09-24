@@ -5,6 +5,7 @@ from selenium.webdriver.edge.service import Service as EdgeService
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import datetime
 
  
 def test_calc():
@@ -13,8 +14,9 @@ def test_calc():
         
     driver.get("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
 
-    input = driver.find_element(By.CSS_SELECTOR, '#delay')
-    input.send_keys('1')
+    text_input = driver.find_element(By.CSS_SELECTOR, "#delay")
+    text_input.clear()
+    text_input.send_keys("45")
 
     driver.find_element(By.XPATH, '//span[text()="7"]').click()
     driver.find_element(By.XPATH, '//span[text()="+"]').click()
