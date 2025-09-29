@@ -1,8 +1,8 @@
-from shop import Auth
+from authorization import Auth
 from selenium import webdriver
-from shop import MainPage
-from shop import Cart
-from shop import Order
+from mainpage import MainPage
+from cart import Cart
+from order import Order
 
 
 def test_login():
@@ -28,3 +28,4 @@ def test_login():
     assert "Total: $58.29" == total_price.text
 
     driver.quit()
+    
