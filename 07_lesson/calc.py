@@ -37,3 +37,4 @@ class Calculator:
         field = self.driver.find_element(By.CSS_SELECTOR, "div.screen")
         result = field.text
         return result
+
