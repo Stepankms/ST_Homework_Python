@@ -10,14 +10,14 @@ class Order:
         """
         self.driver = driver
 
-    @allure.step("Заполнить форму {name}, {last_name}, {postal}, {next}")
+    @allure.step("Заполнение формы {name}, {last_name}, {postal}, {next}")
     def fill_form(self, name, last_name, postal, next):
         """
         Метод заполняет форму данными и нажимает кнопку 'continue'
         :param name: str - значение имени
         :param last_name: str - значение фамилии
         :param postal: str - значение почтового индекса
-        :param next: str - текст кнопки, которую нужно нажать
+        :param next: str - текст кнопки, которую необходимо нажать
         """
 
         name_1 = self.driver.find_element(By.CSS_SELECTOR,
@@ -40,7 +40,7 @@ class Order:
     def check_cost(self, total):
         """
         Метод возвращает итоговую сумму корзины
-        :param total: str - текст итоговой суммы
+        :param total: str - значение итоговой суммы
         """
         total = self.driver.find_element(By.CSS_SELECTOR,
                                          "div.summary_total_label")
