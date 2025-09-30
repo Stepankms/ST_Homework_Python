@@ -10,7 +10,7 @@ class Cart:
         """
         self.driver = driver
 
-    @allure.step("Нажать кнопку checkout")
+    @allure.step("Нажатие кнопки checkout")
     def push_button(self):
         """
         Метод нажимает на кнопку checkout
