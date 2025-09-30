@@ -38,7 +38,7 @@ def driver():
 @allure.severity(allure.severity_level.CRITICAL)
 def test_shop(login, password, name, last_name, postal, total, next, driver):
     """
-    Тест проверяет работу магазина: добавление в корзину товаров
+    Тест проверяет работу магазина: добавление товаров в корзину
     Возвращение итоговой суммы
     :param login: str - значение логина
     :param password: str - значение пароля
@@ -48,9 +48,9 @@ def test_shop(login, password, name, last_name, postal, total, next, driver):
     :param total: str - значение итоговой суммы
     """
     auth_page = Auth(driver)
-    with allure.step(f"Введение логина {login}"):
+    with allure.step(f"Ввод логина {login}"):
         auth_page.input_login(login)
-    with allure.step(f"Введение пароля {password}"):
+    with allure.step(f"Ввод пароля {password}"):
         auth_page.input_password(password)
     with allure.step("Нажатие на кнопку 'submit'"):
         auth_page.submit()
