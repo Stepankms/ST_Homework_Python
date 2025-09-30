@@ -10,7 +10,7 @@ class Auth:
         """
         self.driver = driver
 
-    @allure.step("Заполнить логин {login}")
+    @allure.step("Заполнение поля логин {login}")
     def input_login(self, login):
         """
         Метод заполняет поле "Логин"
@@ -19,7 +19,7 @@ class Auth:
         log = self.driver.find_element(By.CSS_SELECTOR, "#user-name")
         log.send_keys(login)
 
-    @allure.step("Заполнить пароль {password}")
+    @allure.step("Ввод пароля {password}")
     def input_password(self, password):
         """
         Метод заполняет поле "Пароль"
@@ -28,10 +28,10 @@ class Auth:
         pass_word = self.driver.find_element(By.CSS_SELECTOR, "#password")
         pass_word.send_keys(password)
 
-    @allure.step("Нажать ккнопку Submit")
+    @allure.step("Нажатие кнопки Submit")
     def submit(self):
         """
-        Нажимает кнопку Submit
+        Нажимает кнопку "Submit"
         """
         button = self.driver.find_element(By.CSS_SELECTOR, "#login-button")
         button.click()
