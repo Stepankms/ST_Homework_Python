@@ -22,7 +22,7 @@ def driver():
 @allure.title("Тестирование калькулятора: {num1} {operation} {num2} "
               "= {expected_result}")
 @allure.description("Тест проверяет корректность работы калькулятора "
-                    "с опрецией сложения.")
+                    "с операцией сложения.")
 @allure.feature("Калькулятор")
 @allure.severity(allure.severity_level.CRITICAL)
 def test_calculator(num1, operation, num2, expected_result, delay, driver):
@@ -34,10 +34,10 @@ def test_calculator(num1, operation, num2, expected_result, delay, driver):
     :param operation: str — операция (+).
     :param num2: str — второе число для операции.
     :param expected_result: str — ожидаемый результат операции.
-    :param delay: int — задержка в секундах для выполнения операции.
+    :param delay: int — задержка в секундах на выполнение операции.
     """
     calc = Calculator(driver)
-    with allure.step(f"Установка задержки {delay} секунд"):
+    with allure.step(f"Задание задержки {delay} в секундах"):
         calc.set_delay(delay)
     with allure.step(f"Нажатие кнопок: {num1}, {operation}, {num2}, '='"):
         calc.click_buttons([num1, operation, num2, "="])
