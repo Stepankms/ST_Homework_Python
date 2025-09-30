@@ -12,8 +12,8 @@ class Calculator:
         """
         self.driver = driver
 
-    @allure.step("Найти поле ожидания по локатору")
-    @allure.step("Отправить в поле {delay} значение")
+    @allure.step("Поиск поля ожидания по локатору")
+    @allure.step("Заполнение поля {delay} значением")
     def set_delay(self, delay) -> None:
         """
         Находит по локатору поле ожидания
@@ -24,7 +24,7 @@ class Calculator:
         delay_element.clear()
         delay_element.send_keys(delay)
 
-    @allure.step("Кликнуть по кнопкам '{button}'")
+    @allure.step("Клик по кнопкам '{button}'")
     def click_buttons(self, button):
         """
         Нажимает на кнопки калькулятора по очереди.
@@ -58,7 +58,7 @@ class Calculator:
                                                     "div.screen"),
                                                     expected_result))
 
-    @allure.step("Получить результат")
+    @allure.step("Получение результата")
     def get_result(self):
         """
         Возвращает текст результата поля
