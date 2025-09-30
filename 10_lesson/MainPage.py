@@ -10,7 +10,7 @@ class MainPage:
         """
         self.driver = driver
 
-    @allure.step("Добавить товары в корзину")
+    @allure.step("Добавление товаров в корзину")
     def add_goods(self):
         """
         Метод добавляет товары в корзину
@@ -28,7 +28,7 @@ class MainPage:
                                           "add-to-cart-sauce-labs-onesie")
         onesie.click()
 
-    @allure.step("Перейти в корзину")
+    @allure.step("Переход в корзину")
     def go_to_cart(self):
         """
         Метод осуществляет переход в корзину
